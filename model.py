@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import seaborn as sns
-from pyngrok import ngrok
 import streamlit as st
 import matplotlib.pyplot as plt
 import csv
@@ -13,8 +12,6 @@ import random
 from mesa.space import MultiGrid, PropertyLayer
 from datetime import datetime, timedelta
 from mesa.datacollection import DataCollector
-
-ngrok.set_auth_token("2vHd8AtQebQkR0X4uyD19fcFx5r_6BdzkiYWb8jrcB33apfuv")
 
 
 
