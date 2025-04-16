@@ -1,9 +1,3 @@
-
-
-import subprocess
-
-subprocess.run(["pip", "install", "streamlit", "pyngrok", "mesa"])
-
 import streamlit as st
 import pandas as pd
 import numpy as np
