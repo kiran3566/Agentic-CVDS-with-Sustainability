@@ -1,0 +1,12 @@
+streamlit
+seaborn
+matplotlib
+pandas
+numpy
+scikit-learn
+Pillow
+plotly
+tensorflow
+statsmodels
+yfinance
+streamlit-option-menu
