@@ -44,12 +44,14 @@ st.markdown("A multi-panel dashboard for exploring cattle performance, emissions
 # Sidebar controls
 st.sidebar.title("🔧 Simulation Controls")
 diet_energy = st.sidebar.slider("Diet Energy (Mcal/kg)", 1.5, 3.0, 2.2, 0.1)
-cow_count = st.sidebar.slider("Number of Cattle", 1, 150, 100, step=1)
+cow_count = st.sidebar.slider("Number of Cattle", 1, 123, 10, step=1)
 weather = st.sidebar.selectbox("Weather Condition", ["Normal", "Hot", "Cold", "Humid"])
 include_emissions = st.sidebar.checkbox("Include Emissions Mitigation", value=True)
 
 st.sidebar.markdown("---")
 st.sidebar.button("🚀 Run Full Simulation")
+
+cattle_ids = [f"{i}" for i in range(1, cow_count+1)]
 
 # Tabs
 tab1, tab2, tab3 = st.tabs(["📊 Summary", "📈 Time Series", "📋 Comparison"])
@@ -58,17 +60,17 @@ with tab1:
     st.header("📊 Summary Statistics")
     col_a, col_b = st.columns(2)
     with col_a:
-        st.metric("Average Body Weight", f"{full_df['Weight'].mean():.2f} lbs")
-        st.metric("Average Feed Intake", f"{full_df['Feed'].mean():.2f} kg/day")
+        st.metric("Average Body Weight", f"{full_df['Weight'].iloc[:cow_count].mean():.2f} lbs")
+        st.metric("Average Feed Intake", f"{full_df['Feed'].iloc[:cow_count].mean():.2f} kg/day")
     with col_b:
-        st.metric("Methane Emission", f"{full_df['Emissions'].mean():.2f} kg/day")
+        st.metric("Methane Emission", f"{full_df['Emissions'].iloc[:cow_count].mean():.2f} kg/day")
         st.metric("Number of Cattle", f"{cow_count}")
 
     st.subheader("📌 Final weights of each cow - Total Feed - Total Methane emitted")
     pivot = full_df.groupby("Cow").agg({
     "Weight": "last",
     "Feed": "sum",
-    "Emissions": "sum"}).round(2)
+    "Emissions": "sum"}).iloc[:cow_count].round(2)
 
     st.dataframe(pivot)
 
