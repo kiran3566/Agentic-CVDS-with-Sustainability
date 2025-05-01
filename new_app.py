@@ -54,7 +54,7 @@ st.sidebar.button("🚀 Run Full Simulation")
 cattle_ids = [f"{i}" for i in range(1, cow_count+1)]
 
 # Tabs
-tab1, tab2, tab3 = st.tabs(["📊 Summary", "📈 Time Series", "📋 Comparison"])
+tab1, tab2, tab3,tab4 = st.tabs(["📊 Summary", "📈 Time Series", "📋 Comparison","🐄 New Scenario"])
 
 with tab1:
     st.header("📊 Summary Statistics")
