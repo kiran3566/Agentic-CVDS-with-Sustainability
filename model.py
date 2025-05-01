@@ -3,6 +3,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import seaborn as sns
+
 import matplotlib.pyplot as plt
 import csv
 import mesa
@@ -11,6 +12,7 @@ import random
 from mesa.space import MultiGrid, PropertyLayer
 from datetime import datetime, timedelta
 from mesa.datacollection import DataCollector
+
 
 class Cow(mesa.Agent):
 
