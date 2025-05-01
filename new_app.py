@@ -20,7 +20,7 @@ for _, row in data.iterrows():
         "Weight": row["Shrunken_Body_Weight"],
         "Feed": row["DMI"],
         "EBF": row["EBF"],
-        "Emissions": row["Emissions"]
+        "Emissions": row["Emissions(g)"]
     })
 
 full_df = pd.DataFrame(multi_data)
