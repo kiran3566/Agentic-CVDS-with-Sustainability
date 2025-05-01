@@ -246,7 +246,7 @@ with tab4:
             cow_df = df[df["Cow"] == cow_id]
             ax2.plot(cow_df["Day"], cow_df["Emissions(g)"], label=f"Cow {cow_id}")
         ax2.set_xlabel("Day")
-        ax2.set_ylabel("Emissions (g CH₄)")
+        ax2.set_ylabel("Methane Emissions (g)")
         ax2.set_title("Emissions vs Day")
         ax2.legend(fontsize="x-small")
         ax2.grid(True)
