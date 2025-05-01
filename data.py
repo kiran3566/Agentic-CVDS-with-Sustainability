@@ -45,5 +45,4 @@ for step in range(140):
 
 df = starter_model.datacollector.get_agent_vars_dataframe()
 data = df.reset_index()
-data['Emissions'] = data['DMI'].apply(Emissions)
 
