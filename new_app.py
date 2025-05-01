@@ -51,7 +51,6 @@ weather = st.sidebar.selectbox("Weather Condition", ["Normal", "Hot", "Cold", "H
 include_emissions = st.sidebar.checkbox("Include Emissions Mitigation", value=True)
 
 st.sidebar.markdown("---")
-st.sidebar.button("🚀 Run Full Simulation")
 
 cattle_ids = [f"{i}" for i in range(1, cow_count+1)]
 
