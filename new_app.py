@@ -161,6 +161,8 @@ with tab4:
     )
 
     cattle_inputs = cattle_df if isinstance(cattle_df, list) else cattle_df.to_dict("records")
+    
+    st.markdown("---")
 
     # ---------- Feed Plan Table ----------
     st.subheader("🌾 Feed Plan by Pen")
@@ -199,6 +201,7 @@ with tab4:
     st.success("Cattle and feed plan inputs collected.")
 
     # ---------- Simulation Runner ----------
+    st.markdown("---")
     st.subheader("🚀 Run Simulation")
 
     n_days = st.number_input("Enter number of simulation days", min_value=1, max_value=365, value=30)
