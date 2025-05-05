@@ -45,10 +45,7 @@ st.markdown("A multi-panel dashboard for exploring cattle performance, emissions
 
 # Sidebar controls
 st.sidebar.title("🔧 Simulation Controls")
-diet_energy = st.sidebar.slider("Diet Energy (Mcal/kg)", 1.5, 3.0, 2.2, 0.1)
 cow_count = st.sidebar.slider("Number of Cattle", 1, 123, 10, step=1)
-weather = st.sidebar.selectbox("Weather Condition", ["Normal", "Hot", "Cold", "Humid"])
-include_emissions = st.sidebar.checkbox("Include Emissions Mitigation", value=True)
 
 st.sidebar.markdown("---")
 
